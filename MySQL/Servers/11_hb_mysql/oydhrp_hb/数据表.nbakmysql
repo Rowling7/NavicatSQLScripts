@@ -1,0 +1,375 @@
+{
+  "Version": 1.1,
+  "General": {
+    "CloudInstanceName": "",
+    "Project": "",
+    "ProjectOwnerNavicatID": "",
+    "Server": "11_hb_mysql",
+    "Host": "103.105.201.11",
+    "Catalog": "",
+    "Schema": "oydhrp_hb",
+    "Comment": "",
+    "ServerType": "MYSQL",
+    "SpecifiedFileName": "",
+    "IsLockTable": false,
+    "UseSingleTransaction": false,
+    "UseSpecifiedFileName": false
+  },
+  "Tables": {
+    "SelectAll": false,
+    "Selected": [
+      {
+        "Name": "a11",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a12",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a13",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a15",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a16",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a17",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a18",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a19",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a21",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a24",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a25",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a26",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a27",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a28",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a29",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a50",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a51",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a52",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "a61",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "b15",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "b17",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "b28",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "bg01",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "bg02",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "bg03",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "cf01",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "gydwb",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j01",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j02",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j03",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j03a",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j03b",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j04",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j05",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j06",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j07",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "j08",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k001",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k04",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k04b",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k05",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k08",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k010",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k011",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k012",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k023",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k025",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k031",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k038",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k039",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k060",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k062",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k063",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k065",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k066",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k070",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k078",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k079",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k081",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k082",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k083",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k084",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k088",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k88",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k098",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k201",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k202",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "k203",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "l001",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "l060",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "l063",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "l065",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v51",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v52",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v53",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v54",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v55",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v59",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v71",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "v72",
+        "ObjectType": "Table_MYSQL"
+      },
+      {
+        "Name": "xqlxb",
+        "ObjectType": "Table_MYSQL"
+      }
+    ]
+  },
+  "Views": {
+    "SelectAll": true,
+    "Selected": []
+  },
+  "Functions": {
+    "SelectAll": true,
+    "Selected": []
+  },
+  "Events": {
+    "SelectAll": true,
+    "Selected": []
+  },
+  "Sequences": {
+    "SelectAll": false,
+    "Selected": []
+  },
+  "Types": {
+    "SelectAll": false,
+    "Selected": []
+  },
+  "Indexes": {
+    "SelectAll": false,
+    "Selected": []
+  },
+  "Triggers": {
+    "SelectAll": false,
+    "Selected": []
+  }
+}

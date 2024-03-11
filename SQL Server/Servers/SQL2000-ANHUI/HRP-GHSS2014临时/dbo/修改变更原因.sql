@@ -1,0 +1,176 @@
+--DK6306
+---10.未变更
+---11.新建
+---14.往年建成本年统计
+---21.指标变更或地理位置变更
+--清除K1302
+SELECT K1302,K1303,K1304
+--UPDATE K001 SET K1302=NULL,K1303=NULL,K1304=NULL
+from k001 
+WHERE left(K0101,1) in ('X','Y','Z','C')
+AND  a3219<>'1'  
+
+
+----“原路线代码”未填写
+if exists(select * from tempdb..sysobjects where id=object_id('tempdb..#tk001')) drop table #tk001
+if exists(select * from tempdb..sysobjects where id=object_id('tempdb..##tk001')) drop table ##tk001
+
+select  RTRIM(k.a0102) A0102,RTRIM(k.k0101) K0101,min(k.k0108) k0108,max(k.k0109) k0109
+INTO #TK001
+from LUDUAN k
+WHERE LEFT(K.K0101,1)<>'W' 
+and left(k.K0101,1) in ('X','Y','Z','C')
+--and k0101 ='X014340223'
+group by k.a0102,k.k0101
+ORDER BY k.a0102,k.k0101
+
+SELECT *  INTO ##TK001 from #tk001 
+
+
+--2.止点不在范围内
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--UPDATE K SET K.k1302='zzzzz' ,k1303 =NULL,k1304=NULL
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0109<=L.K0108 
+where  k.a3219<>'1' 
+and RTRIM(L.A0102)is not null 
+and k.k1302 is null
+--and k.k0101='X014340223'
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+--3.起点不在范围内
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--UPDATE K SET K.k1302='zzzzz' ,k1303 =NULL,k1304=NULL
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0108>=L.K0109 
+where  k.a3219<>'1' 
+and RTRIM(L.A0102)is not null 
+and k.k1302 is null
+--and k.k0101='X014340223'
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+--4.起点不在，止点在
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--UPDATE K SET K.k1302=k.K0101 ,k1303 =l.K0108,k1304=k.K0109
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0108<L.K0108  AND K.K0109<=L.K0109 AND K.K0109>L.K0108 
+where  k.a3219<>'1' 
+and RTRIM(L.A0102)is not null 
+--and k.k0101='X014340223'
+and (k.k1302 is null and k.k1303 is null and k.k1304 is null)
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+--5.止点不在，起点在
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--uPDATE K SET K.k1302=k.K0101 ,k1304=l.K0109,k1303 =k.K0108
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0108>=L.K0108 and K.K0108<L.K0109  AND K.K0109>L.K0109
+where  k.a3219<>'1'  
+and RTRIM(L.A0102)is not null 
+and (k.k1302 is null and k.k1303 is null and k.k1304 is null)
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+--6.起止点不在范围内
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--UPDATE K SET K.k1302=k.K0101 ,k1303 =l.K0108,k1304=l.K0109
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0108<L.K0108 AND K.K0109>L.K0109
+where  k.a3219<>'1'  and RTRIM(L.A0102)is not null 
+and k.k1302 is null
+--and k.k0101='X014340223'
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+
+--6.在路线范围内
+SELECT RTRIM(K.A0102) A0102,RTRIM(K.K0101) K0101,RTRIM(L.A0102) LA0102,RTRIM(L.K0101) LK0101, K.K0108,K.K0109 , K.K0180,K.HA3219,K.hk3912,k.k1302 ,k.k1303 ,L.K0108 LK0108,k.k1304,L.K0109 LK0109 --,RTRIM(K.KWYID) KWYID,RTRIM(L.KWYID) LKWYID
+--UPDATE K SET K.k1302=K.K0101 ,k1303 =k.K0108,k1304=k.K0109
+FROM K001  K 
+LEFT JOIN #TK001 L ON  K.K0101=L.K0101 
+AND K.K0108>=L.K0108 AND K.K0109<=L.K0109 
+where  k.a3219<>'1'  
+and RTRIM(L.A0102)is not null 
+--and k.k1302 is null
+--and k.k0101='X014340223'
+and left(k.K0101,1) in ('X','Y','Z','C')
+
+
+--7
+SELECT distinct a0102,k0101,k3912,k0180,k1302
+--update k001 set k3912='14',hk3912='往年建成本年统计',K1302=NULL,K1303=NULL,K1304=NULL
+from k001 
+where k1302='zzzzz'
+
+SELECT distinct a0102,k0101,k3912,k0180,k1302
+--update k001 set k3912=null,hk3912=null
+from k001 
+where k3912='14'
+
+SELECT distinct a0102,k0101,k3912,k0180,k1302
+--update k001 set k3912='14',hk3912='往年建成本年统计'
+from k001 
+where k3912 is null and k1302 is null --and k0180 <>'2023'
+and left(K0101,1) in ('X','Y','Z','C')
+
+
+
+SELECT distinct a0102,k0101,k3912,k0180,k1302,KWYID
+--update k001 set k3912='14',hk3912='往年建成本年统计'
+from k001 
+where k3912 is null --and k1302 is null and k0180 IS NULL
+and left(K0101,1) in ('X','Y','Z','C')
+ORDER BY k3912
+
+
+SELECT DISTINCT k3912,count(*)
+FROM K001 
+WHERE left(K0101,1) in ('X','Y','Z','C')
+group by k3912
+
+
+SELECT  k3912
+--update k001 set k3912='10',hk3912='未变更'
+from k001 
+where isnull(k3912,'')=''and left(K0101,1) in ('X','Y','Z','C')
+
+
+
+
+-------------------------------------------------0117
+
+
+--新纳入统计的路段的“路段路面类型”不允许“4/5/6/7/8/9”
+
+SELECT RTRIM(K001.K0101)+RTRIM(K0115),HK5104,HK0304,KWYID,k3912,k1302,k1303,k1304,XLS.Z
+--UPDATE K001 SET K3912='21',HK3912='指标变更或地理位置变更'
+from K001 
+LEFT JOIN (
+SELECT a,SUBSTRING(a,charindex(',路段代码=',a)+7,13) Z
+from OPENROWSET('Microsoft.JET.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=D:\Desktop\表.xls',sheet9$)
+)XLS ON RTRIM(K001.K0101)+RTRIM(K0115)=XLS.Z
+WHERE XLS.Z IS NOT NULL
+ORDER BY KWYID
+
+
+--“原路线代码”不在上年路段表内
+SELECT RTRIM(K001.K0101)+RTRIM(K0115),HK5104,HK0304,KWYID,k3912,K0101,k1302,K0108,k1303,K0109,k1304,XLS.Z
+--UPDATE K001 SET K3912='21',k1302=NULL,k1303=NULL,k1304=NULL
+from K001 
+LEFT JOIN (
+SELECT a,SUBSTRING(a,charindex(',路段代码=',a)+7,13) Z
+from OPENROWSET('Microsoft.JET.OLEDB.4.0','Excel 5.0;HDR=YES;DATABASE=D:\Desktop\表.xls',sheet11$)
+)XLS ON RTRIM(K001.K0101)+RTRIM(K0115)=XLS.Z
+WHERE XLS.Z IS NOT NULL
+ORDER BY KWYID
+
+
+

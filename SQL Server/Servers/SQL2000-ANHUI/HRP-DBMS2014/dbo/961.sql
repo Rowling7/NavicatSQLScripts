@@ -1,0 +1,79 @@
+/*
+---桥梁编码查询
+USE NCGL342023
+--查询报部桥梁信息
+SELECT t0.QLBM QLBM ,t0.QLMC QLMC,t0.QLZXZH QLZXZH,t0.BGYY BGYY,t0.JSZKPDDJ JSZKPDDJ,t0.YQLBM YQLBM,DBMS.A,DBMS.B
+FROM T_QL  t0
+RIGHT JOIN
+(--查询2023年桥梁信息
+		SELECT left(k0101,4)+left(a0103,6)+'L'+rtrim(k6001) BM,RTRIM(K6002) K6002,RTRIM(K6003) K6003 ,T1.A,T1.B,T1.QLZXZH
+		from [HRP-DBMS2014]..k060
+		RIGHT JOIN 
+		(--查询2022年桥梁中心桩号
+			SELECT T2022.QLBM ,T2022.QLMC,T2022.QLZXZH,XLS.A,XLS.B
+			FROM NCGL342022..T_QL T2022
+			RIGHT JOIN 
+				(--查xls里面的961桥
+					SELECT A,B
+					from OPENROWSET ('Microsoft.JET.OLEDB.4.0', 'Excel 8.0;HDR=YES;DATABASE=D:\Desktop\表0127.xls', sheet2$ ) 
+					WHERE LEN(A)>4
+				)XLS ON T2022.QLBM=XLS.A
+				WHERE 	XLS.A IS NOT NULL AND LEFT(XLS.A,1)<>'Z'
+		) T1 ON T1.QLBM= left(k0101,4)+left(a0103,6)+'L'+rtrim(k6001)
+) DBMS ON DBMS.BM=QLBM
+*/
+
+
+/*
+--桥梁名称+中心桩号查询（X）
+USE NCGL342023
+--查询报部桥梁信息
+SELECT t0.QLBM QLBM ,t0.QLMC QLMC,t0.QLZXZH QLZXZH,t0.BGYY BGYY,t0.JSZKPDDJ JSZKPDDJ,t0.YQLBM YQLBM,DBMS.A,DBMS.B
+FROM T_QL  t0
+RIGHT JOIN
+(--查询2023年桥梁信息
+		SELECT left(k0101,4)+left(a0103,6)+'L'+rtrim(k6001) BM,RTRIM(K6002) K6002,RTRIM(K6003) K6003 ,T1.A,T1.B,T1.QLZXZH
+		from [HRP-DBMS2014]..k060
+		RIGHT JOIN 
+		(--查询2022年桥梁中心桩号
+			SELECT T2022.QLBM ,T2022.QLMC,T2022.QLZXZH,XLS.A,XLS.B
+			FROM NCGL342022..T_QL T2022
+			RIGHT JOIN 
+				(--查xls里面的961桥
+					SELECT A,B
+					from OPENROWSET ('Microsoft.JET.OLEDB.4.0', 'Excel 8.0;HDR=YES;DATABASE=D:\Desktop\表0127.xls', sheet2$ ) 
+					WHERE LEN(A)>4
+				)XLS ON T2022.QLBM=XLS.A
+				WHERE 	XLS.A IS NOT NULL AND LEFT(XLS.A,1)<>'Z'
+		) T1 ON rtrim(T1.qlmc)+rtrim(t1.qlzxzh)= RTRIM(K6002)+RTRIM(K6003)
+) DBMS ON DBMS.BM=QLBM
+*/
+
+
+---387
+USE NCGL342023
+SELECT  QLBM,QLMC,QLZXZH,BGYY,YQLBM,JCSJ,XLS.A
+--update T_QL set  yqlbm =xls.a,bgyy='21'
+FROM T_QL
+RIGHT JOIN 
+(
+	SELECT A
+	from OPENROWSET ('Microsoft.JET.OLEDB.4.0', 'Excel 8.0;HDR=YES;DATABASE=D:\Desktop\表0127.xls', sheet3$ ) 
+)XLS ON QLBM=XLS.A
+WHERE XLS.A IS NOT  NULL and yqlbm is null
+order by JCSJ DESC
+
+
+---961
+SELECT  QLBM,QLMC,QLZXZH,BGYY,YQLBM,JCSJ,XLS.A
+FROM T_QL
+RIGHT JOIN 
+(
+SELECT A,B
+from OPENROWSET ('Microsoft.JET.OLEDB.4.0', 'Excel 8.0;HDR=YES;DATABASE=D:\Desktop\表0127.xls', sheet2$ ) 
+WHERE LEN(A)>4
+)XLS ON QLBM=XLS.A
+where (qlbm is not  null and  yqlbm is not  null) or (qlbm is null)
+order by jcsj
+
+

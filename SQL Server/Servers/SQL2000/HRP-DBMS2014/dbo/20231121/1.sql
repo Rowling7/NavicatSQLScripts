@@ -1,0 +1,4 @@
+SELECT k001.k0101,k060.k0101
+FROM k060 
+LEFT JOIN k001  on  k060.k6003>k001.k0108 and k060.k6003<k001.k0109 and 
+rtrim(k060.k0101) =rtrim(k001.k0101)

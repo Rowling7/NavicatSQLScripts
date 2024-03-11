@@ -1,0 +1,1171 @@
+{
+  "Version": 1.1,
+  "General": {
+    "ContinueOnError": false,
+    "IncludeDelete": true,
+    "IncludeInsert": true,
+    "IncludeUpdate": true,
+    "RunMultipleSQL": false,
+    "ShowDetails": true,
+    "SourceCatalog": "HRP-DBMS2014临时",
+    "SourceCloudInstanceName": "",
+    "SourceProject": "",
+    "SourceProjectOwnerNavicatID": "",
+    "SourceSchema": "dbo",
+    "SourceServer": "SQL2000-湖北",
+    "SourceServerType": "MSSQL",
+    "TargetCatalog": "HRP-DBMS2014临时",
+    "TargetCloudInstanceName": "",
+    "TargetProject": "",
+    "TargetProjectOwnerNavicatID": "",
+    "TargetSchema": "dbo",
+    "TargetServer": "SQL2000-安徽",
+    "TargetServerType": "MSSQL",
+    "UseTransaction": false
+  },
+  "Tables": [
+    {
+      "Source": {
+        "Name": "K060",
+        "ObjectType": "Table_MSSQL"
+      },
+      "Target": {
+        "Name": "K060",
+        "ObjectType": "Table_MSSQL"
+      },
+      "Keys": [],
+      "Fields": [
+        {
+          "Source": {
+            "Name": "A0102",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A0102",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA0102",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA0102",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0101",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0101",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A0101",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A0101",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA0101",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA0101",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0112",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0112",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6003",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6003",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6001",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6001",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6002",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6002",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0143",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0143",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A0103",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A0103",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6006",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6006",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6005",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6005",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6005",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6005",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6080",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6080",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6080",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6080",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6004",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6004",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6004",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6004",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6007",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6007",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6007",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6007",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1302",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1302",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1302",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1302",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6028",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6028",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6028",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6028",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1305",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1305",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6062",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6062",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6062",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6062",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1307",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1307",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1307",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1307",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6008",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6008",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6065",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6065",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6063",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6063",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6064",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6064",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6066",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6066",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6009",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6009",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6069",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6069",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6016",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6016",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6016",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6016",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1306",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1306",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1306",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1306",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6102",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6102",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6017",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6017",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6017",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6017",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1328",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1328",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1328",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1328",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6022",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6022",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6022",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6022",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6023",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6023",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6023",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6023",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6024",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6024",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6024",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6024",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1317",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1317",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1317",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1317",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1316",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1316",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1318",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1318",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1318",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1318",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1319",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1319",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1319",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1319",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1313",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1313",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1313",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1313",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1314",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1314",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6079",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6079",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6030",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6030",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6031",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6031",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6032",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6032",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0116",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0116",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A3219",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A3219",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA3219",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA3219",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0199",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0199",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9902",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9902",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA9902",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA9902",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9903",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9903",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9904",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9904",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA9904",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA9904",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9905",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9905",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9906",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9906",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA9906",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA9906",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9908",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9908",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A9907",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A9907",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA9907",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA9907",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0180",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0180",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0181",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0181",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0185",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0185",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0186",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0186",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6110",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6110",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6110",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6110",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6111",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6111",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K3912",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K3912",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK3912",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK3912",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "KWYID",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "KWYID",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6051",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6051",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6050",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6050",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA0103",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA0103",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6117",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6117",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6117",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6117",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6118",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6118",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6118",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6118",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6119",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6119",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6119",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6119",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6120",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6120",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6120",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6120",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "A1331",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "A1331",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HA1331",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HA1331",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6067",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6067",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K0149",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K0149",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK0149",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK0149",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6041",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6041",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6041",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6041",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6040",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6040",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "K6121",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "K6121",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "HK6121",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "HK6121",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "k6122",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "k6122",
+            "ObjectType": "TableField_MSSQL"
+          }
+        },
+        {
+          "Source": {
+            "Name": "hk6122",
+            "ObjectType": "TableField_MSSQL"
+          },
+          "Target": {
+            "Name": "hk6122",
+            "ObjectType": "TableField_MSSQL"
+          }
+        }
+      ]
+    }
+  ]
+}
