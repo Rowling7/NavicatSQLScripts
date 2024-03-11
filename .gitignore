@@ -1,10 +1,12 @@
 *.db
 *.db-shm
 *.db-wal
-.Premium/
-/Premium/*
 *.nb3
-D:/Documents/Navicat/Premium/
+
 Premium/logs/cmdline.log
 Premium/profiles/AutoSave/59a20e70-3c80-4e64-908d-17116351bbee.bak
 Premium/
+/Premium/
+.Premium/
+/Premium/*
+D:/Documents/Navicat/Premium/
