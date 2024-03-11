@@ -2,5 +2,7 @@
 *.db-shm
 *.db-wal
 .Premium/
+/Premium/*
 *.nb3
 D:/Documents/Navicat/Premium/
+Premium/logs/cmdline.log
