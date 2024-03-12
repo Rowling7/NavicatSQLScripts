@@ -2,7 +2,7 @@
 
 ----------MQI 按区划计算全省优良路率
 select left(a0103,6),rtrim(objjc),
-[总评定里程]=sum(isnull(a5008,0)/1000),
+[总评定里程]=cast((sum(case when k0304 in ('22','23','24','30') then a5008 else 0 end)+sum(case when  k0304 in ('10','11') then a5008 else 0 end)/2)/1000 as numeric(18,3)),
 [优]=sum(case when isnull(a5010,0)>=90 then isnull(a5008,0)/1000 else 0 end),
 [良]=sum(case when isnull(a5010,0)>=80 and isnull(a5010,0)<90 then isnull(a5008,0)/1000 else 0 end),
 [中]=sum(case when isnull(a5010,0)>=70 and isnull(a5010,0)<80 then isnull(a5008,0)/1000 else 0 end),
