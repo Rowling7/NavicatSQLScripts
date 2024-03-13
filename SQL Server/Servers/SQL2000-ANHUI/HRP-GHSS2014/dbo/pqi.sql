@@ -38,3 +38,17 @@ or isnull(A5045,'0')<>RTRIM(AA5045)
 or isnull(A5046,'0')<>RTRIM(AA5046)
 )
 ---cast((sum(case when k0304 in ('22','23','24','30') then a5008 else 0 end)+sum(case when k0304 in ('10','11') then a5008 else 0 end)/2)/1000 as numeric(8,3))
+
+/*
+		CAST(sum(isnull(A5011,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) PQI,
+		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=90 AND ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
+		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=90 AND ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) A,
+		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=80  AND isnull(A5011,0)<90 AND ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
+		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=80  AND isnull(A5011,0)<90 AND ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) B,
+		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=70  AND isnull(A5011,0)<80 AND ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
+		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=70  AND isnull(A5011,0)<80 AND ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) C,
+		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=60  AND isnull(A5011,0)<70 AND ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
+		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=60  AND isnull(A5011,0)<70 AND ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) D,
+		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)<60 AND ISNULL(A5009,'') IN ('2','3') THEN isnull(a5008,0) END)/2,0)+
+		ISNULL(SUM(CASE WHEN isnull(A5011,0)<60 AND ISNULL(A5009,'') IN ('1') THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) E
+*/
