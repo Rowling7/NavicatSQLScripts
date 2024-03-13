@@ -9,3 +9,14 @@ STUFF(rtrim(objname),3,1,null) +'_'+left(objjc,3) objjc
 from DA0102
 where len(rtrim(objname))=5 AND  OBJJC LIKE '%干线公路%' 
 order by objjc --综合排序
+
+
+
+
+
+select --查询市州
+STUFF(rtrim(objname),3,1,null) XZQH,rtrim(objname) GXGL,STUFF(rtrim(objname),3,1,2) NCGL,left(objjc,3) objjc
+INTO 
+from DA0102
+where len(rtrim(objname))=5 AND  OBJJC LIKE '%干线公路%' 
+order by STUFF(rtrim(objname),3,1,null)
