@@ -9,17 +9,12 @@ LEFT JOIN
 		MAX(ha0102) BB,
 		MAX(a0101a) CC,
 		LEFT(K0101,1) DD,
-		CAST(sum(isnull(A5011,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) PQI,
-		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=90 AND k0304 in ('10','11') THEN isnull(a5008,0) END)/2,0)+
-		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=90 AND k0304 in ('22','23','24','30')THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AA5042,
-		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=80  AND isnull(A5011,0)<90 AND k0304 in ('10','11') THEN isnull(a5008,0) END)/2,0)+
-		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=80  AND isnull(A5011,0)<90 AND k0304 in ('22','23','24','30')THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AA5043,
-		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=70  AND isnull(A5011,0)<80 AND k0304 in ('10','11') THEN isnull(a5008,0) END)/2,0)+
-		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=70  AND isnull(A5011,0)<80 AND k0304 in ('22','23','24','30')THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AA5044,
-		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)>=60  AND isnull(A5011,0)<70 AND k0304 in ('10','11') THEN isnull(a5008,0) END)/2,0)+
-		ISNULL(SUM(CASE WHEN isnull(A5011,0)>=60  AND isnull(A5011,0)<70 AND k0304 in ('22','23','24','30')THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AA5045,
-		CAST((ISNULL(SUM(CASE WHEN isnull(A5011,0)<60 AND k0304 in ('10','11') THEN isnull(a5008,0) END)/2,0)+
-		ISNULL(SUM(CASE WHEN isnull(A5011,0)<60 AND k0304 in ('22','23','24','30')THEN isnull(a5008,0) END),0))/1000 AS NUMERIC(18,3)) AA5046
+		CAST(sum(isnull(a5011,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) pQI,--a5011
+		CAST((ISNULL(SUM(CASE WHEN isnull(a5011,0)>=90  THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5042,
+		CAST((ISNULL(SUM(CASE WHEN isnull(a5011,0)>=80 and isnull(a5011,0)<90  THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5043,
+		CAST((ISNULL(SUM(CASE WHEN isnull(a5011,0)>=70 and isnull(a5011,0)<80 THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5044,
+		CAST((ISNULL(SUM(CASE WHEN isnull(a5011,0)>=60 and isnull(a5011,0)<70 THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5045,
+		CAST((ISNULL(SUM(CASE WHEN isnull(a5011,0)<60 	THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5046	
 	from k03 a
 	where 	ISNULL(K5104,'') IN ('11','12','21','22','23') 
 		and not(
@@ -35,5 +30,11 @@ LEFT JOIN
 	GROUP BY A0102,LEFT(K0101,1)
 )TK04 ON AA=A0102 AND  CC= left(a0101a,6) AND A0203=DD 
 WHERE left(a0101a,6)='2023'+'43'
-
+and (
+A5042<>RTRIM(AA5042)
+or isnull(A5043,'0')<>RTRIM(AA5043)
+or isnull(A5044,'0')<>RTRIM(AA5044)
+or isnull(A5045,'0')<>RTRIM(AA5045)
+or isnull(A5046,'0')<>RTRIM(AA5046)
+)
 ---cast((sum(case when k0304 in ('22','23','24','30') then a5008 else 0 end)+sum(case when k0304 in ('10','11') then a5008 else 0 end)/2)/1000 as numeric(8,3))
