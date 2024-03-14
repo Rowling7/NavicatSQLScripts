@@ -385,3 +385,11 @@ SELECT K6040,A,B,K6002,H,K6065
 FROM  K060
 INNER JOIN  NB ON BN=K6040 
 WHERE H<>K6065
+
+
+
+--出桥梁表
+
+SELECT 
+[a],[b],[c],[d],[e],[f],[g],[h],[i],[j],[k],[l],[m],[n],[o],[p],[q],[r],[s],[t],[u],[v],[w],[x],[y],[z],[aa],[ab],[ac],[ad],[ae],[af],[ag],[ah],[ai],[aj],[ak],[al],[am],[an],[ao],[ap],[aq],[ar],[as],[at],[au],[av],[aw],[ax],[ay],[az],[ba],[bb],[bc],[bd],[be],[bf],[bg],[bh],[bi],[bj],[bk],[bl],[bm],[bn]
+FROM NB
