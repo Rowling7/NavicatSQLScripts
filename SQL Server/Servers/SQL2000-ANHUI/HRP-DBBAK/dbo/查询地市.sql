@@ -13,10 +13,9 @@ order by objjc --综合排序
 
 
 
-
+--LEFT JOIN AHDSH ON LEFT(STUFF(rtrim(A0102),3,1,null),4)=XZQH 
 select --查询市州
 STUFF(rtrim(objname),3,1,null) XZQH,rtrim(objname) GXGL,STUFF(rtrim(objname),3,1,2) NCGL,left(objjc,3) objjc
-INTO 
 from DA0102
 where len(rtrim(objname))=5 AND  OBJJC LIKE '%干线公路%' 
 order by STUFF(rtrim(objname),3,1,null)

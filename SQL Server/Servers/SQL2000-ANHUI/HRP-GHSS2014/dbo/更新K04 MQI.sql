@@ -14,14 +14,15 @@ LEFT JOIN
 		A0102 AA,
 		MAX(ha0102) BB,
 		MAX(a0101a) CC,
-		LEFT(K0101,1) DD,		CAST(sum(isnull(a5010,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) MQI,--A5010
+		LEFT(K0101,1) DD,		
+		CAST(sum(isnull(a5010,0)*isnull(a5008,0))/nullif(sum(isnull(a5008,0)),0) AS NUMERIC(18,2)) MQI,--A5010
 		CAST((ISNULL(SUM(CASE WHEN isnull(a5010,0)>=90  THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5032,
 		CAST((ISNULL(SUM(CASE WHEN isnull(a5010,0)>=80 and isnull(a5010,0)<90  THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5033,
 		CAST((ISNULL(SUM(CASE WHEN isnull(a5010,0)>=70 and isnull(a5010,0)<80 THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5034,
 		CAST((ISNULL(SUM(CASE WHEN isnull(a5010,0)>=60 and isnull(a5010,0)<70 THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5035,
 		CAST((ISNULL(SUM(CASE WHEN isnull(a5010,0)<60 	THEN isnull(a5008,0) END),'0'))/1000 AS NUMERIC(18,3)) AA5036
 		from k03 a
-	where 	ISNULL(K5104,'') IN ('11','12','21','22','23')
+	where 	ISNULL(K5104,'') IN ('11','12','21','22','23') and a5082 is not null
 		and not(
 				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%市政道路%' or
 				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%改扩建施工%' or
@@ -29,9 +30,9 @@ LEFT JOIN
 				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%修复养护施工%' or
 				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%其他施工-%' or
 				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%其他单位-%' or
-				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%缺陷责任期-%'
+				CAST(ISNULL(A0129,'') AS VARCHAR(100)) LIKE '%缺陷责任期-%' 
 			)
-		and	 left(a0101a,6)='2023'+'43' and A0102 like '34%'
+		and	 left(a0101a,6)='2023'+'43' and A0102  like '3420421%'
 	GROUP BY A0102,LEFT(K0101,1)
 )TK04 ON AA=A0102  AND A0203=DD
 WHERE left(a0101a,6)='2024'+'43'
