@@ -2,8 +2,7 @@ SELECT a5082
 --update K03 set a5082='1',ha5082='5210' 
 from k03
 where k0304 in ('11','22') and a5082 in ('2');
-
-
+/*
 --2、高速一级路且沥青路面，5210,0.35*PCI+0.3*RQI+35=PQI ,反推RQI
 
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011) 差值,
@@ -24,37 +23,27 @@ and (a5010<>0 or a5011<>0)
 and (a5011-35-0.35*isnull(a5011a,0))/0.3>0
 order by a0102,k0101,k0108
 
-/*
 --再处理a5011b小于0
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011) 差值,
 cast((a5011-35-0.35*isnull(a5011a,0))/0.3 as numeric(5,2))
-from K03 where k0304 in('10','11') and k5104 in ('11','21','22','23') and a5082='1'
-and abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011)>0.01
-and (a5010<>0 or a5011<>0)
-and (a5011-35-0.35*isnull(a5011a,0))/0.3<0
-order by a0102,k0101,k0108
-
---先a5011b赋值0
-update K03 set a5011b=0
+--update K03 set a5011b=0  --先a5011b赋值0
+from K03 
 where k0304 in('10','11') and k5104 in ('11','21','22','23') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
 and (a5011-35-0.35*isnull(a5011a,0))/0.3<0
+order by a0102,k0101,k0108
 
 --再处理a5011a
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011) 差值,
 cast((a5011-35-0.3*isnull(a5011b,0))/0.35 as numeric(5,2))
-from K03 where k0304 in('10','11') and k5104 in ('11','21','22','23') and a5082='1'
-and abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011)>0.01
-and (a5010<>0 or a5011<>0)
-and (a5011-35-0.35*isnull(a5011a,0))/0.3<0
-order by a0102,k0101,k0108
-
-update K03 set a5011a=cast((a5011-35-0.3*isnull(a5011b,0))/0.35 as numeric(5,2))
+--update K03 set a5011a=cast((a5011-35-0.3*isnull(a5011b,0))/0.35 as numeric(5,2))
+from K03 
 where k0304 in('10','11') and k5104 in ('11','21','22','23') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.35+isnull(a5011b,0)*0.3+35 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
 and (a5011-35-0.35*isnull(a5011a,0))/0.3<0
+order by a0102,k0101,k0108
 
 
 --3、高速一级路且水泥路面，5210,0.5*PCI+0.3*RQI+20=PQI ,反推RQI
@@ -71,57 +60,37 @@ order by a0102,k0101,k0108
 --190
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011) 差值,
 cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))
-from K03 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
-and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
-and (a5010<>0 or a5011<>0)
---and k0101 = 'C113421003'
-and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))>0 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<=100
-order by a0102,k0101,k0108
-
---190
-update K03 set a5011b=cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))
+--update K03 set a5011b=cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))
+from K03 
 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
 --and k0101 = 'C113421003'
 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))>0 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<=100
-
+order by a0102,k0101,k0108
 
 --再处理小于0
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011) 差值,
 cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))
+--update K03 set a5011b=0
 from K03 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
 --and k0101 = 'C113421003'
 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<0
 order by a0102,k0101,k0108
-
-update K03 set a5011b=0
-where k0304 in('10','11') and k5104 in ('12') and a5082='1'
-and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
-and (a5010<>0 or a5011<>0)
---and k0101 = 'C113421003'
-and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<0
-
 
 --再处理a5011a
 select k0101,k0108,ha5009,k0304,hk0304,left(hk5104,2) hk5104,a5010,cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2)) 计算pqi,a5011,a5011a,a5011b,a5082,abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011) 差值,
 cast((a5011-20-0.3*isnull(a5011b,0))/0.5 as numeric(5,2))
-from K03 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
-and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
-and (a5010<>0 or a5011<>0)
---and k0101 = 'C113421003'
-and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<0
-order by a0102,k0101,k0108
-
-
-update K03 set a5011a=cast((a5011-20-0.3*isnull(a5011b,0))/0.5 as numeric(5,2))
+--update K03 set a5011a=cast((a5011-20-0.3*isnull(a5011b,0))/0.5 as numeric(5,2))
+from K03 
 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
 --and k0101 = 'C113421003'
 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))<0
+order by a0102,k0101,k0108
 
 
 --再处理大于100的，a5011b赋值100，也要改a5011a
@@ -135,7 +104,7 @@ and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))>100
 order by a0102,k0101,k0108
 
 
-update K03 set a5011b=100
+--update K03 set a5011b=100
 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
@@ -143,7 +112,7 @@ and (a5010<>0 or a5011<>0)
 and cast((a5011-20-0.5*isnull(a5011a,0))/0.3 as numeric(5,2))>100
 
 
-update K03 set a5011a=cast((a5011-20-0.3*isnull(a5011b,0))/0.5 as numeric(5,2))
+--update K03 set a5011a=cast((a5011-20-0.3*isnull(a5011b,0))/0.5 as numeric(5,2))
 where k0304 in('10','11') and k5104 in ('12') and a5082='1'
 and abs(cast(isnull(a5011a,0)*0.5+isnull(a5011b,0)*0.3+20 as numeric(5,2))-a5011)>0.01
 and (a5010<>0 or a5011<>0)
