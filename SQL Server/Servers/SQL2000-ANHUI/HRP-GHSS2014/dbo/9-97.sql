@@ -1,0 +1,51 @@
+/*不显示零*/
+SELECT
+RTRIM(K6002),		--桥梁名称
+RTRIM(K60.K6001),			--桥梁代码
+K6003,					--桥梁中心桩号
+RTRIM(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(K60.K0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003','')),			--路线编号
+RTRIM(A50.K0112),			--路线名称
+RTRIM(D.OBJJC) HK0304,			--技术等级
+k0185,--经度
+k0186,--纬度
+K6008,					--桥梁全长
+K6065,					--跨径总长
+K6063,					--单孔最大跨径
+RTRIM(REPLACE(K6064,' ','')),		--跨径组合
+A6066,					--桥梁全宽
+K6009,					--桥面净宽
+K6007,HK6007,				--跨径分
+K6004,replace(HK6004,'桥',''),				--使用年限分
+K6016,HK6016,				--主桥上部结构
+K6110,RTRIM(HK6110),			--主桥上部结构材料
+K6017,    				--桥墩类型
+CASE WHEN RTRIM(HK6017)='X形墩' THEN 'X 形墩' WHEN RTRIM(HK6017)='Y形墩' THEN 'Y 形墩' WHEN RTRIM(HK6017)='V形墩' THEN 'V 形墩' WHEN RTRIM(HK6017)='H形墩' THEN 'H 形墩' ELSE RTRIM(HK6017) END,	--桥墩类型
+K6022,HK6022,				--设计荷载等级
+K6023,HK6023,				--抗震等级
+K6005,
+CASE WHEN HK6005='其它地物' THEN '其它' ELSE HK6005 END HK6005,				--跨越类型
+RTRIM(LTRIM(REPLACE(REPLACE(REPLACE(REPLACE(K6006,CHAR(13),''),CHAR(10),''),CHAR(9),''),CHAR(32),''))),					--跨越地物名称
+HK6024,					--通航等级
+HA1328,					--墩台防撞类型
+(CASE WHEN K6062='1' THEN '是' ELSE '否' END),						--是否互通立交
+K6028,HK6028			--评定等级
+FROM K60 
+	LEFT JOIN 
+		(SELECT A.A0102,A.K0101,A.K6001,MAX(B.K0304) K0304
+		FROM K60 A LEFT JOIN K01 B ON A.A0102=B.A0102 AND A.K0101=B.K0101 AND A.K6003>=B.K0108 AND A.K6003<=B.K0109
+		WHERE LEFT(A.K0101,1) IN ('G','H','S','T') AND A.A0102 LIKE '34%' AND A.A0101 <= '2023'
+		GROUP BY A.A0102,A.K0101,A.K6001) C
+	     ON K60.A0102=C.A0102 AND K60.K0101=C.K0101 AND K60.K6001=C.K6001
+	LEFT JOIN D002 D  ON  D.OBJNAME=C.K0304
+	LEFT JOIN A50  ON K60.A0102=A50.A0102 AND K60.K0101=A50.K0101
+      LEFT JOIN DA0102 ON K60.A0102=DA0102.OBJNAME
+	left join (
+	SELECT 				case when left(k0101,1) in ('G','S','H','T') THEN rtrim(replace(replace(replace(replace(replace(k0101,'340000',''),'000000',''),'D001',''),'D002',''),'D003',''))+left(rtrim(a0103),6) ELSE rtrim(K0101) END+'L'+rtrim(K6001) k60011,
+k0185,--经度
+k0186--纬度
+from [HRP-DBMS2014]..k060
+where left(k0101,1) in('g','h','s','t')
+)e on e.k60011=RTRIM(K60.K6001)
+WHERE LEFT(K60.K0101,1) IN ('G','H','S','T') AND K60.A0102 LIKE '34%' AND A0101 <= '2023'
+ORDER BY REPLACE(REPLACE(REPLACE(K60.K0101,'340000',''),'000000',''),'C','ZZ'),K60.K6003
+
